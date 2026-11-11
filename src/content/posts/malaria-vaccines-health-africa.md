@@ -6,7 +6,7 @@ regions: [east-africa, southern-africa, north-africa, west-africa, indian-ocean]
 countries: [kenya, tanzania, south-africa]
 tips: [health, visas]
 hero: okavango-delta
-heroAlt: "Channels and reed beds of the Okavango Delta, Botswana"
+heroAlt: "Channels, islands and reed beds of the Okavango Delta seen from the air"
 author: editors
 published: 2026-11-11
 updated: 2026-11-11

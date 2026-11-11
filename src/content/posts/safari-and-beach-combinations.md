@@ -6,7 +6,7 @@ regions: [east-africa, southern-africa, indian-ocean]
 countries: [tanzania, kenya, mozambique, mauritius, seychelles, south-africa]
 tips: []
 hero: zanzibar-beach
-heroAlt: "White sand and turquoise water on the coast of Zanzibar"
+heroAlt: "White sand and turquoise water at Nungwi beach, Zanzibar"
 author: editors
 published: 2026-11-11
 updated: 2026-11-11

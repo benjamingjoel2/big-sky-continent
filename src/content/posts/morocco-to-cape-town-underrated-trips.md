@@ -6,7 +6,7 @@ regions: [north-africa, west-africa, east-africa, southern-africa, indian-ocean]
 countries: [morocco, ghana, ethiopia, malawi, namibia, madagascar, senegal, zambia, sao-tome-and-principe]
 tips: []
 hero: sahara-merzouga
-heroAlt: "Sand dunes of Erg Chebbi near Merzouga, Morocco"
+heroAlt: "Rippled sand dunes of Erg Chebbi at sunset, Morocco"
 author: editors
 published: 2026-11-11
 updated: 2026-11-11

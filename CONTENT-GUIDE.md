@@ -20,7 +20,7 @@ category: safari            # safari | gorillas-primates | beach-islands | itine
 regions: [east-africa]      # any of: east-africa, southern-africa, north-africa, west-africa, indian-ocean
 countries: [tanzania, kenya]  # slugs from src/data/brands.json; drives the "Plan this trip" box (first 3 shown)
 tips: []                    # travel-tips sub-topics, any of: health, visas, money
-hero: mara-river            # photo key from src/data/photos.json
+hero: mara-river      # photo key from src/data/photos.json
 heroAlt: "Short, literal description of the hero photo"
 author: editors             # key in src/data/authors.json
 published: 2026-11-11

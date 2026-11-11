@@ -32,4 +32,4 @@ Add `src/content/posts/<slug>.md` following `CONTENT-GUIDE.md`, then push to `ma
 
 ## Photos
 
-Only freely licensed photographs from Wikimedia Commons, credited with author and licence on the photo and on `/photo-credits/`. `scripts/commons-search.py` searches Commons for candidates.
+Only freely licensed photographs from Wikimedia Commons, credited with author and licence on the photo and on `/photo-credits/`. `scripts/commons-search.py` searches Commons for candidates; `scripts/commons-fetch.py` downloads the picks and writes their credits.

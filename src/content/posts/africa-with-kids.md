@@ -6,7 +6,7 @@ regions: [southern-africa, east-africa, indian-ocean]
 countries: [south-africa, namibia, kenya, mauritius]
 tips: []
 hero: etosha
-heroAlt: "Zebras and springbok at a waterhole in Etosha National Park, Namibia"
+heroAlt: "An elephant at the Okaukuejo waterhole in Etosha National Park, Namibia"
 author: editors
 published: 2026-11-11
 updated: 2026-11-11

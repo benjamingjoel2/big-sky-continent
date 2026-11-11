@@ -6,7 +6,7 @@ regions: [east-africa]
 countries: [rwanda, uganda]
 tips: []
 hero: mountain-gorilla
-heroAlt: "A mountain gorilla in dense green forest"
+heroAlt: "A female mountain gorilla in Volcanoes National Park, Rwanda"
 author: editors
 published: 2026-11-11
 updated: 2026-11-11

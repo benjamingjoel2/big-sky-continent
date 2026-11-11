@@ -5,8 +5,8 @@ category: safari
 regions: [east-africa]
 countries: [kenya, tanzania]
 tips: []
-hero: amboseli-kilimanjaro
-heroAlt: "Mount Kilimanjaro seen across the plains of Amboseli, Kenya"
+hero: amboseli-elephants
+heroAlt: "A family of elephants grazing among acacia trees in Amboseli National Park, Kenya"
 author: editors
 published: 2026-11-11
 updated: 2026-11-11

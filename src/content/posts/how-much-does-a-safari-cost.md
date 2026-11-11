@@ -6,7 +6,7 @@ regions: [east-africa, southern-africa]
 countries: [tanzania, kenya, botswana]
 tips: [money]
 hero: chobe-elephants
-heroAlt: "Elephants at the water's edge in Chobe National Park, Botswana"
+heroAlt: "Two elephants crossing a dry plain in Chobe National Park, Botswana"
 author: editors
 published: 2026-11-11
 updated: 2026-11-11

@@ -6,7 +6,7 @@ regions: [southern-africa]
 countries: [south-africa, botswana, zimbabwe, zambia]
 tips: []
 hero: victoria-falls
-heroAlt: "Victoria Falls with spray rising from the gorge"
+heroAlt: "Victoria Falls from the air, with spray rising from the gorge"
 author: editors
 published: 2026-11-11
 updated: 2026-11-11

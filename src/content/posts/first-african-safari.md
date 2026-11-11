@@ -5,8 +5,8 @@ category: safari
 regions: [east-africa, southern-africa]
 countries: [kenya, tanzania, botswana, south-africa]
 tips: []
-hero: masai-mara
-heroAlt: "Open grassland and acacia trees in the Masai Mara, Kenya"
+hero: kenya-giraffes
+heroAlt: "Three giraffes in tall golden grass in a national park in Kenya"
 author: editors
 published: 2026-11-11
 updated: 2026-11-11

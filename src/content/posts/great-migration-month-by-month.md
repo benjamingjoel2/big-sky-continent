@@ -6,7 +6,7 @@ regions: [east-africa]
 countries: [tanzania, kenya]
 tips: []
 hero: mara-river
-heroAlt: "Wildebeest crossing the Mara River"
+heroAlt: "Wildebeest pouring down a bank into the Mara River in the northern Serengeti"
 author: editors
 published: 2026-11-11
 updated: 2026-11-11
