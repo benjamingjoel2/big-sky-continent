@@ -1,0 +1,26 @@
+---
+import Photo from './Photo.astro';
+import { categories } from '../data/site';
+import { postUrl, fmtDate, isoDate, readingMinutes, type Post } from '../lib/posts';
+interface Props { post: Post; headingLevel?: 'h2' | 'h3'; showExcerpt?: boolean }
+const { post, headingLevel = 'h3', showExcerpt = true } = Astro.props;
+const H = headingLevel;
+const cat = categories[post.data.category];
+---
+<article class="card">
+  <a href={postUrl(post)} class="card-img" tabindex="-1" aria-hidden="true">
+    <Photo name={post.data.hero} alt="" credit={false} widths={[480, 800]} sizes="(min-width: 64rem) 22rem, (min-width: 40rem) 45vw, 100vw" aspect="3 / 2" />
+  </a>
+  <p class="eyebrow"><a href={cat.path}>{cat.name}</a>{post.data.advertisement && <span class="ad"> · Advertisement feature</span>}</p>
+  <H class="card-title"><a href={postUrl(post)}>{post.data.title}</a></H>
+  {showExcerpt && <p class="card-desc">{post.data.description}</p>}
+  <p class="meta"><time datetime={isoDate(post.data.published)}>{fmtDate(post.data.published)}</time> · {readingMinutes(post.body)} min read</p>
+</article>
+<style>
+  .card-img { display: block; margin-bottom: 0.9rem; }
+  .card-title { font-size: 1.3rem; margin-bottom: 0.4rem; }
+  .card-title a { color: var(--ink); text-decoration: none; }
+  .card-title a:hover { color: var(--green); text-decoration: underline; }
+  .card-desc { color: var(--muted); font-size: 0.98rem; margin-bottom: 0.4rem; }
+  .meta { margin: 0; }
+</style>

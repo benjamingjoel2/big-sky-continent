@@ -1,0 +1,22 @@
+---
+import Page from '../components/Page.astro';
+import { site, disclosure } from '../data/site';
+---
+<Page title="About Big Sky Continent" description="What Big Sky Continent is, who publishes it, and how its stories are written, sourced and kept up to date." path="/about/">
+  <p>Big Sky Continent is a travel blog for people planning a trip to Africa, whether that is a first safari, a gorilla trek, a week on an island beach or a long journey from Morocco to the Cape. Our stories are written to be read: they start with a place and a moment, then get practical.</p>
+  <h2>Who publishes it</h2>
+  <p><strong>{disclosure.publishedBy}</strong> <a href={site.publisher.url}>Tourground</a> runs a directory of verified travel companies around the world and a family of destination brands. Every story here ends with a “Plan this trip” box that points you to verified local operators in the Tourground directory and, where Tourground has a brand in that country, to that brand. Our <a href="/disclosure/">disclosure</a> explains the relationship in full.</p>
+  <h2>How we write</h2>
+  <ul>
+    <li><strong>Sourced.</strong> Facts come from official sources: park authorities, tourism boards, health agencies and government travel advice. Every story lists its sources at the end.</li>
+    <li><strong>Dated.</strong> Every story shows when it was published and when it was last updated. Health, visa and safety facts link to the official page and say when we checked it.</li>
+    <li><strong>Nothing invented.</strong> We do not publish made-up statistics, prices, reviews, quotes or testimonials. If we cannot source something, we leave it out. We only quote prices from official tariffs, such as park and permit fees.</li>
+    <li><strong>Labelled.</strong> Any paid content is labelled “Advertisement feature” and kept visually separate. There is none on the site today.</li>
+  </ul>
+  <h2>What we do not do</h2>
+  <p>Big Sky Continent does not sell trips, take bookings or handle payments, and we do not give medical advice. For health questions, talk to a travel health clinic or your doctor.</p>
+  <h2>Corrections</h2>
+  <p>If something is wrong or out of date, tell us at <a href={`mailto:${site.email}`}>{site.email}</a> and we will check it against the source and correct it. The “last updated” date on the story will change when we do.</p>
+  <h2>Contact</h2>
+  <p>Publisher: Tourground (<a href={site.publisher.url}>tourground.com</a>). Email: <a href={`mailto:${site.email}`}>{site.email}</a>.</p>
+</Page>

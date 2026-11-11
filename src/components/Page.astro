@@ -1,0 +1,17 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../data/site';
+import { fmtDate } from '../lib/posts';
+interface Props { title: string; description: string; path: string; updated?: string }
+const { title, description, path, updated = site.launch } = Astro.props;
+---
+<Base title={title} description={description} path={path} crumbs={[{ name: title, path }]}>
+  <div class="wrap">
+    <header class="page-intro">
+      <p class="eyebrow">About this site</p>
+      <h1>{title}</h1>
+      <p class="meta">Last updated <time datetime={updated}>{fmtDate(new Date(updated))}</time></p>
+    </header>
+    <div class="prose"><slot /></div>
+  </div>
+</Base>

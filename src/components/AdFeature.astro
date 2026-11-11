@@ -1,0 +1,12 @@
+---
+/** Wrapper for any paid placement. Always labelled "Advertisement feature" and kept visually separate. */
+import { disclosure } from '../data/site';
+---
+<aside class="ad-feature" aria-label={disclosure.paidLabel}>
+  <p class="ad-label">{disclosure.paidLabel}</p>
+  <slot />
+</aside>
+<style>
+  .ad-feature { border: 2px dashed var(--muted); border-radius: var(--radius); padding: 1rem 1.25rem; background: var(--surface); }
+  .ad-label { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink); margin-bottom: 0.5rem; }
+</style>

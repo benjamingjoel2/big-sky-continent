@@ -1,0 +1,18 @@
+---
+import Page from '../components/Page.astro';
+import { site } from '../data/site';
+---
+<Page title="Terms of use" description="The terms for using Big Sky Continent." path="/terms/">
+  <h2>Information, not advice</h2>
+  <p>Stories on Big Sky Continent are general travel information. They are not medical, legal or financial advice. Health, visa, entry and safety rules change, sometimes at short notice: always check the official sources we link to, and your own government’s travel advice, before you book or travel.</p>
+  <h2>Accuracy</h2>
+  <p>We check facts against official sources and show when each story was last updated, but we cannot guarantee that every detail is current. If you spot an error, email <a href={`mailto:${site.email}`}>{site.email}</a>.</p>
+  <h2>Bookings</h2>
+  <p>Big Sky Continent does not sell trips or take bookings. If you book with a company you find through the Tourground directory or a Tourground brand, your contract is with that company, on its terms. Read them, and check what financial protection applies, before you pay.</p>
+  <h2>Copyright</h2>
+  <p>The text of this site is © Tourground. Photographs belong to their authors and are used under the licences shown with each photo and on the <a href="/photo-credits/">photo credits</a> page.</p>
+  <h2>Links</h2>
+  <p>We link to other websites as sources or for planning. We are not responsible for their content.</p>
+  <h2>Changes</h2>
+  <p>We may update these terms. The date at the top shows the latest version.</p>
+</Page>

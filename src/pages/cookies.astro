@@ -1,0 +1,10 @@
+---
+import Page from '../components/Page.astro';
+import { site } from '../data/site';
+---
+<Page title="Cookie policy" description="Big Sky Continent does not set cookies." path="/cookies/">
+  <p>Big Sky Continent does not set any cookies, and it does not use analytics, advertising or tracking technologies of any kind. That is why you do not see a cookie banner.</p>
+  <p>Fonts and images are served from this site’s own domain, so loading a page does not send your data to a third party such as a font or image service.</p>
+  <p>When you follow a link to another website, such as an official source or the Tourground directory, that site may set its own cookies under its own policy.</p>
+  <p>If this ever changes, we will update this page and ask for your consent before setting any cookie that is not strictly necessary. Questions: <a href={`mailto:${site.email}`}>{site.email}</a>.</p>
+</Page>

@@ -1,0 +1,41 @@
+---
+import Base from '../layouts/Base.astro';
+import PostCard from './PostCard.astro';
+import type { Post } from '../lib/posts';
+interface Props {
+  title: string; description: string; path: string; posts: Post[];
+  crumbs: { name: string; path: string }[]; eyebrow?: string;
+  links?: { name: string; path: string; blurb: string }[]; linksTitle?: string;
+}
+const { title, description, path, posts, crumbs, eyebrow, links = [], linksTitle } = Astro.props;
+---
+<Base title={title} description={description} path={path} crumbs={crumbs}>
+  <div class="wrap">
+    <header class="page-intro">
+      {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+      <h1>{title}</h1>
+      <p class="lede">{description}</p>
+    </header>
+    {links.length > 0 && (
+      <nav class="sublinks" aria-label={linksTitle ?? 'Sections'}>
+        {linksTitle && <h2 class="sublinks-title">{linksTitle}</h2>}
+        <ul>{links.map((l) => <li><a href={l.path}>{l.name}</a><span>{l.blurb}</span></li>)}</ul>
+      </nav>
+    )}
+    <section class="section" aria-labelledby="list-title">
+      <div class="section-head"><h2 id="list-title">{posts.length} {posts.length === 1 ? 'story' : 'stories'}</h2></div>
+      {posts.length ? <div class="grid grid-3">{posts.map((p) => <PostCard post={p} headingLevel="h3" />)}</div>
+        : <p>No stories here yet. New stories are on the way: see <a href="/stories/">all stories</a>.</p>}
+    </section>
+    <slot />
+  </div>
+</Base>
+<style>
+  .sublinks { margin-top: 2rem; }
+  .sublinks-title { font-size: 1.2rem; }
+  .sublinks ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.75rem; grid-template-columns: 1fr; }
+  @media (min-width: 48rem) { .sublinks ul { grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); } }
+  .sublinks li { background: var(--surface); border: 1px solid var(--line); border-top: 3px solid var(--ochre); border-radius: var(--radius); padding: 0.9rem 1rem; }
+  .sublinks a { font-family: var(--serif); font-weight: 600; font-size: 1.15rem; display: block; }
+  .sublinks span { font-size: 0.9rem; color: var(--muted); }
+</style>

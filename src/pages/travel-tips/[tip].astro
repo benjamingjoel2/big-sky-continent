@@ -1,0 +1,14 @@
+---
+import Listing from '../../components/Listing.astro';
+import { allPosts } from '../../lib/posts';
+import { categories, tips, type TipKey } from '../../data/site';
+export function getStaticPaths() {
+  return (Object.keys(tips) as TipKey[]).map((key) => ({ params: { tip: key }, props: { key } }));
+}
+const { key } = Astro.props as { key: TipKey };
+const t = tips[key];
+const posts = (await allPosts()).filter((p) => p.data.tips.includes(key));
+const c = categories['travel-tips'];
+---
+<Listing title={`${t.name}: travel tips for Africa`} description={t.blurb} path={t.path} posts={posts} eyebrow={c.name}
+  crumbs={[{ name: c.name, path: c.path }, { name: t.name, path: t.path }]} />

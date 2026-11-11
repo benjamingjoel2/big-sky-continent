@@ -1,0 +1,21 @@
+---
+import Page from '../components/Page.astro';
+import authors from '../data/authors.json';
+import { allPosts, postUrl } from '../lib/posts';
+const posts = await allPosts();
+---
+<Page title="Authors" description="Who writes and checks the stories on Big Sky Continent." path="/authors/">
+  <p>Stories on Big Sky Continent are written and fact-checked by our editorial desk at Tourground. When guest writers join us, their name, background and the trips they have actually taken will be listed here.</p>
+  {Object.entries(authors).map(([key, a]) => {
+    const theirs = posts.filter((p) => p.data.author === key);
+    return (
+      <section id={key}>
+        <h2>{a.name}</h2>
+        <p class="meta">{a.role}</p>
+        <p>{a.bio}</p>
+        <h3>Stories ({theirs.length})</h3>
+        <ul>{theirs.map((p) => <li><a href={postUrl(p)}>{p.data.title}</a></li>)}</ul>
+      </section>
+    );
+  })}
+</Page>

@@ -1,0 +1,95 @@
+---
+import Base from '../layouts/Base.astro';
+import Photo from '../components/Photo.astro';
+import PostCard from '../components/PostCard.astro';
+import Newsletter from '../components/Newsletter.astro';
+import { allPosts, postUrl, fmtDate, isoDate, readingMinutes } from '../lib/posts';
+import { categories, regions, site } from '../data/site';
+
+const posts = await allPosts();
+const featured = posts.find((p) => p.data.featured) ?? posts[0];
+const latest = posts.filter((p) => p.id !== featured.id).slice(0, 6);
+const startHere = posts.filter((p) => p.data.startHere).sort((a, b) => Number(b.data.featured) - Number(a.data.featured)).slice(0, 4);
+const fcat = categories[featured.data.category];
+---
+<Base title={site.name} description={site.description} path="/">
+  <h1 class="visually-hidden">Big Sky Continent: stories and practical advice for travelling in Africa</h1>
+  <section class="wrap featured" aria-labelledby="featured-title">
+    <a href={postUrl(featured)} class="featured-img" tabindex="-1" aria-hidden="true">
+      <Photo name={featured.data.hero} alt="" eager credit={false} sizes="(min-width: 64rem) 44rem, 100vw" aspect="4 / 3" />
+    </a>
+    <div class="featured-text">
+      <p class="eyebrow">Featured story · <a href={fcat.path}>{fcat.name}</a></p>
+      <h2 id="featured-title" class="featured-title"><a href={postUrl(featured)}>{featured.data.title}</a></h2>
+      <p class="lede">{featured.data.description}</p>
+      <p class="meta"><time datetime={isoDate(featured.data.published)}>{fmtDate(featured.data.published)}</time> · {readingMinutes(featured.body)} min read</p>
+      <p><a class="button" href={postUrl(featured)}>Read the story</a></p>
+    </div>
+  </section>
+
+  <section class="wrap start" aria-labelledby="start-title">
+    <div class="start-inner">
+      <div class="start-head">
+        <p class="eyebrow">Start here</p>
+        <h2 id="start-title">Planning your first safari?</h2>
+        <p>Four stories to read first: where to go, what it costs and how to stay healthy.</p>
+      </div>
+      <ol class="start-list">
+        {startHere.map((p, i) => (
+          <li>
+            <span class="num" aria-hidden="true">{i + 1}</span>
+            <a href={postUrl(p)}>{p.data.title}</a>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="wrap section" aria-labelledby="latest-title">
+    <div class="section-head"><h2 id="latest-title">Latest stories</h2><a href="/stories/">All stories</a></div>
+    <div class="grid grid-3">{latest.map((p) => <PostCard post={p} />)}</div>
+  </section>
+
+  <section class="wrap section" aria-labelledby="cats-title">
+    <div class="section-head"><h2 id="cats-title">Explore by category</h2></div>
+    <ul class="link-tiles">
+      {Object.values(categories).map((c) => <li><a href={c.path}>{c.name}</a><span>{c.blurb}</span></li>)}
+    </ul>
+  </section>
+
+  <section class="wrap section" aria-labelledby="dest-title">
+    <div class="section-head"><h2 id="dest-title">Destinations</h2><a href="/destinations/">All destinations</a></div>
+    <ul class="link-tiles">
+      {Object.values(regions).map((r) => <li><a href={r.path}>{r.name}</a><span>{r.blurb}</span></li>)}
+    </ul>
+  </section>
+
+  <div class="wrap section">
+    <Newsletter />
+  </div>
+</Base>
+<style>
+  .featured { display: grid; gap: 1.25rem; margin-top: 1.5rem; align-items: center; }
+  @media (min-width: 64rem) { .featured { grid-template-columns: 1.3fr 1fr; gap: 2.5rem; margin-top: 2.5rem; } }
+  .featured-title { font-size: clamp(1.8rem, 1.4rem + 1.6vw, 2.5rem); }
+  .featured-title a { color: var(--ink); text-decoration: none; }
+  .featured-title a:hover { color: var(--green); text-decoration: underline; }
+  .start { margin-top: 3rem; }
+  .start-inner { background: var(--green); color: #fff; border-radius: var(--radius); padding: 1.5rem 1.25rem; display: grid; gap: 1rem; }
+  @media (min-width: 64rem) { .start-inner { grid-template-columns: 1fr 2fr; padding: 2rem; gap: 2rem; } }
+  .start h2 { color: #fff; }
+  .start .eyebrow { color: var(--ochre-soft); }
+  .start-head p:last-child { margin: 0; }
+  .start-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.75rem; }
+  @media (min-width: 48rem) { .start-list { grid-template-columns: 1fr 1fr; } }
+  .start-list li { display: flex; gap: 0.75rem; align-items: flex-start; background: rgba(255, 255, 255, 0.1); border-radius: var(--radius); padding: 0.8rem 1rem; }
+  .start-list a { color: #fff; font-family: var(--serif); font-size: 1.15rem; font-weight: 600; line-height: 1.3; }
+  .start-list a:hover { color: var(--ochre-soft); }
+  .num { font-family: var(--serif); font-weight: 600; color: var(--ochre-soft); font-size: 1.15rem; min-width: 1.2rem; }
+  .link-tiles { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.75rem; grid-template-columns: 1fr; }
+  @media (min-width: 40rem) { .link-tiles { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 64rem) { .link-tiles { grid-template-columns: repeat(5, 1fr); } }
+  .link-tiles li { background: var(--surface); border: 1px solid var(--line); border-top: 3px solid var(--ochre); border-radius: var(--radius); padding: 1rem; }
+  .link-tiles a { font-family: var(--serif); font-weight: 600; font-size: 1.2rem; display: block; margin-bottom: 0.3rem; }
+  .link-tiles span { font-size: 0.9rem; color: var(--muted); }
+</style>

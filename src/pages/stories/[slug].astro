@@ -1,0 +1,81 @@
+---
+import { render } from 'astro:content';
+import { getImage } from 'astro:assets';
+import Base from '../../layouts/Base.astro';
+import Photo from '../../components/Photo.astro';
+import PlanTrip from '../../components/PlanTrip.astro';
+import Sources from '../../components/Sources.astro';
+import PostCard from '../../components/PostCard.astro';
+import AdFeature from '../../components/AdFeature.astro';
+import authors from '../../data/authors.json';
+import { categories, regions } from '../../data/site';
+import { allPosts, postUrl, readingMinutes, related, fmtDate, isoDate, type Post } from '../../lib/posts';
+import { photo } from '../../lib/photos';
+import { blogPosting } from '../../lib/schema';
+
+export async function getStaticPaths() {
+  const posts = await allPosts();
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post, posts } }));
+}
+const { post, posts } = Astro.props as { post: Post; posts: Post[] };
+const { Content } = await render(post);
+const d = post.data;
+const cat = categories[d.category];
+const author = (authors as Record<string, { name: string; role: string; url: string }>)[d.author];
+if (!author) throw new Error(`Unknown author ${d.author} in ${post.id}`);
+const hero = photo(d.hero);
+const og = await getImage({ src: hero.image, width: 1200, height: 630, fit: 'cover', format: 'jpg' });
+const words = (post.body ?? '').split(/\s+/).filter(Boolean).length;
+const path = postUrl(post);
+const rel = related(post, posts);
+const updatedLabel = fmtDate(d.updated);
+---
+<Base title={d.title} description={d.description} path={path} ogType="article" ogImage={og.src}
+  crumbs={[{ name: cat.name, path: cat.path }, { name: d.title, path }]}
+  schema={[blogPosting({ title: d.title, description: d.description, path, image: og.src, width: 1200, height: 630,
+    published: isoDate(d.published), updated: isoDate(d.updated), authorName: author.name, authorUrl: author.url,
+    section: cat.name, words })]}>
+  <article class="post">
+    <header class="wrap post-head">
+      <p class="eyebrow"><a href={cat.path}>{cat.name}</a>{d.regions.slice(0, 2).map((r) => <> · <a href={regions[r].path}>{regions[r].name}</a></>)}</p>
+      {d.advertisement && <p class="ad-tag">Advertisement feature</p>}
+      <h1>{d.title}</h1>
+      <p class="lede">{d.description}</p>
+      <p class="byline">
+        By <a href={author.url}>{author.name}</a>
+        <span class="sep">·</span> Published <time datetime={isoDate(d.published)}>{fmtDate(d.published)}</time>
+        <span class="sep">·</span> Last updated <time datetime={isoDate(d.updated)}>{updatedLabel}</time>
+        <span class="sep">·</span> {readingMinutes(post.body)} min read
+      </p>
+    </header>
+    <div class="wrap hero">
+      <Photo name={d.hero} alt={d.heroAlt} eager sizes="(min-width: 72rem) 68rem, 100vw" aspect="16 / 9" />
+    </div>
+    <div class="wrap">
+      <p class="checked">Facts in this story were checked against the official sources listed at the end on {updatedLabel}. Health, visa and safety rules change: check them again before you travel.</p>
+      <div class="prose">
+        <Content />
+      </div>
+      {d.advertisement && <AdFeature><p>This story was paid for by the company named above.</p></AdFeature>}
+      <PlanTrip countries={d.countries} />
+      <Sources sources={d.sources} updated={updatedLabel} />
+    </div>
+  </article>
+  {rel.length > 0 && (
+    <section class="wrap section" aria-labelledby="related-title">
+      <div class="section-head"><h2 id="related-title">Related stories</h2></div>
+      <div class="grid grid-3">{rel.map((p) => <PostCard post={p} />)}</div>
+    </section>
+  )}
+</Base>
+<style>
+  .post-head { max-width: 50rem; margin-top: 1.5rem; margin-left: 0; }
+  @media (min-width: 72rem) { .post-head { margin-left: auto; margin-right: auto; max-width: var(--wrap); } }
+  .byline { font-size: 0.92rem; color: var(--muted); }
+  .byline .sep { margin: 0 0.3rem; }
+  .hero { margin-top: 1rem; margin-bottom: 1.5rem; }
+  .checked { max-width: 42rem; font-size: 0.9rem; color: var(--muted); border-left: 3px solid var(--ochre); padding-left: 0.8rem; }
+  .ad-tag { display: inline-block; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; border: 2px solid var(--ink); padding: 0.2rem 0.5rem; }
+  .prose { font-size: 1.09rem; }
+  .prose :global(p:first-child) { font-size: 1.18rem; }
+</style>

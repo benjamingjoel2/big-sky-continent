@@ -1,0 +1,9 @@
+---
+import Listing from '../../components/Listing.astro';
+import { allPosts } from '../../lib/posts';
+import { categories } from '../../data/site';
+const posts = await allPosts();
+---
+<Listing title="All stories" description="Every story on Big Sky Continent, newest first: safaris, gorilla treks, beaches, itineraries and the practical things to sort before you go."
+  path="/stories/" posts={posts} crumbs={[{ name: 'All stories', path: '/stories/' }]}
+  links={Object.values(categories)} linksTitle="Browse by category" />

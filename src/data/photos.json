@@ -1,0 +1,82 @@
+{
+ "masai-mara": {
+  "file": "File:Three giraffes 01.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Three_giraffes_01.jpg",
+  "author": "Byrdyak",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "caption": "Three giraffes 01"
+ },
+ "amboseli-kilimanjaro": {
+  "file": "File:Kilimanjaro, Tanzania, 2024-05-22, DD 109.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File%3AKilimanjaro%2C_Tanzania%2C_2024-05-22%2C_DD_109.jpg",
+  "author": "Diego Delso",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "caption": "Kilimanjaro, Tanzania, 2024-05-22, DD 109"
+ },
+ "mara-river": {
+  "file": "File:Three giraffes 01.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Three_giraffes_01.jpg",
+  "author": "Byrdyak",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "caption": "Three giraffes 01"
+ },
+ "mountain-gorilla": {
+  "file": "File:Kagera, Rwanda landscape.jpg",
+  "page": "https://commons.wikimedia.org/w/index.php?curid=22493798",
+  "author": "Joachim Huber from Switzerland",
+  "license": "CC BY-SA 2.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+  "caption": "Kagera, Rwanda landscape"
+ },
+ "zanzibar-beach": {
+  "file": "File:Bazaruto Island Mozambique from air.jpg",
+  "page": "https://commons.wikimedia.org/w/index.php?curid=147103673",
+  "author": "Tom Corser",
+  "license": "CC BY-SA 3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "caption": "Bazaruto Island Mozambique from air"
+ },
+ "victoria-falls": {
+  "file": "File:Mosi-oa-Tunya, Livingstone (20260519-P1075665).jpg",
+  "page": "https://commons.wikimedia.org/wiki/File%3AMosi-oa-Tunya%2C_Livingstone_%2820260519-P1075665%29.jpg",
+  "author": "Matti Blume",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+  "caption": "Mosi-oa-Tunya, Livingstone (20260519-P1075665)"
+ },
+ "okavango-delta": {
+  "file": "File:Salida de sol, delta del Okavango, Botsuana, 2018-08-01, DD 21.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File%3ASalida_de_sol%2C_delta_del_Okavango%2C_Botsuana%2C_2018-08-01%2C_DD_21.jpg",
+  "author": "Diego Delso",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "caption": "Salida de sol, delta del Okavango, Botsuana, 2018-08-01, DD 21"
+ },
+ "chobe-elephants": {
+  "file": "File:Salida de sol, delta del Okavango, Botsuana, 2018-08-01, DD 21.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File%3ASalida_de_sol%2C_delta_del_Okavango%2C_Botsuana%2C_2018-08-01%2C_DD_21.jpg",
+  "author": "Diego Delso",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "caption": "Salida de sol, delta del Okavango, Botsuana, 2018-08-01, DD 21"
+ },
+ "etosha": {
+  "file": "File:054e Dead camel thorn tree in Deadvlei Photo by Giles Laurent.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File%3A054e_Dead_camel_thorn_tree_in_Deadvlei_Photo_by_Giles_Laurent.jpg",
+  "author": "Giles Laurent",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "caption": "054e Dead camel thorn tree in Deadvlei Photo by Giles Laurent"
+ },
+ "sahara-merzouga": {
+  "file": "File:Kasbah Amridil enterance, Marocco (قصبة امريديل).jpg",
+  "page": "https://commons.wikimedia.org/wiki/File%3AKasbah_Amridil_enterance%2C_Marocco_%28%D9%82%D8%B5%D8%A8%D8%A9_%D8%A7%D9%85%D8%B1%D9%8A%D8%AF%D9%8A%D9%84%29.jpg",
+  "author": "Petar Milošević",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "caption": "Kasbah Amridil enterance, Marocco (قصبة امريديل)"
+ }
+}

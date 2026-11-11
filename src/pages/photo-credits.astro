@@ -1,0 +1,20 @@
+---
+import Page from '../components/Page.astro';
+import { allPhotos } from '../lib/photos';
+const photos = allPhotos();
+---
+<Page title="Photo credits" description="Every photograph on Big Sky Continent, its author, its licence and its source." path="/photo-credits/">
+  <p>All photographs on Big Sky Continent are real photographs, freely licensed on Wikimedia Commons, and are shown with their author and licence. We do not use AI-generated images. Images may be cropped and resized.</p>
+  <table>
+    <thead><tr><th scope="col">Photograph</th><th scope="col">Author</th><th scope="col">Licence</th></tr></thead>
+    <tbody>
+      {photos.map((p) => (
+        <tr>
+          <td><a href={p.meta.page} rel="nofollow">{p.meta.caption}</a></td>
+          <td>{p.meta.author}</td>
+          <td>{p.meta.license_url ? <a href={p.meta.license_url} rel="license nofollow">{p.meta.license}</a> : p.meta.license}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</Page>

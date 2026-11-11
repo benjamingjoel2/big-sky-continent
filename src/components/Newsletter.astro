@@ -1,0 +1,18 @@
+---
+import { site } from '../data/site';
+const mailto = `mailto:${site.email}?subject=${encodeURIComponent('Subscribe to Big Sky Continent')}&body=${encodeURIComponent('Please add me to the Big Sky Continent newsletter.')}`;
+---
+<section class="newsletter" aria-labelledby="nl-title">
+  <div>
+    <h2 id="nl-title">New stories by email</h2>
+    <p>One email when we publish something new: trip ideas, updated health and visa rules, and nothing else. To sign up, send us a one-line email and we will add you. You can unsubscribe at any time by replying “unsubscribe”. See our <a href="/privacy/">privacy notice</a>.</p>
+  </div>
+  <p class="nl-action"><a class="button" href={mailto}>Sign up by email</a></p>
+</section>
+<style>
+  .newsletter { background: var(--ochre-soft); border-radius: var(--radius); padding: 1.5rem 1.25rem; display: grid; gap: 0.5rem; align-items: center; }
+  @media (min-width: 48rem) { .newsletter { grid-template-columns: 1fr auto; gap: 2rem; padding: 2rem; } }
+  .newsletter h2 { margin-bottom: 0.4rem; }
+  .newsletter p { margin-bottom: 0; }
+  .nl-action { margin: 0.5rem 0 0; }
+</style>

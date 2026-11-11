@@ -1,0 +1,21 @@
+---
+import Page from '../components/Page.astro';
+import AdFeature from '../components/AdFeature.astro';
+import { site, disclosure } from '../data/site';
+import brands from '../data/brands.json';
+---
+<Page title="Disclosure" description="Who publishes Big Sky Continent, how Tourground makes money, how the Plan this trip box works and how paid content is labelled." path="/disclosure/">
+  <h2>Publisher</h2>
+  <p>{disclosure.publishedBy} Tourground runs a directory of verified travel companies and earns money from paid plans sold to those companies. Tourground also runs destination brands, and some Tourground brands are owned by Tourground’s founders.</p>
+  <h2>The “Plan this trip” box</h2>
+  <p>Every story ends with a box that links to the <a href={site.directoryUrl}>Tourground directory</a>, where you can search verified local operators by destination. Where a story is about a country in which Tourground has a brand, the box also links to that brand. These links are to Tourground’s own directory and brands. No company pays to appear in the box, and the stories above it are written to be useful whether or not you use them.</p>
+  <p>Tourground brands linked from this site:</p>
+  <ul>{Object.values(brands).map((b) => <li><a href={b.url}>{b.brand}</a> ({b.country})</li>)}</ul>
+  <h2>Editorial independence</h2>
+  <p>No company pays to be mentioned in a story. We do not name or recommend individual private operators, lodges or camps in our stories. Links inside the sources at the end of a story are citations.</p>
+  <h2>Paid content</h2>
+  <p>If we ever publish paid content, it will be labelled “{disclosure.paidLabel}” at the top of the story, on every listing card and in a box like the one below, and kept visually separate from editorial content. Links in paid content will be marked <code>rel="sponsored"</code>. There is no paid content on the site today.</p>
+  <AdFeature><p>This is an example of how a paid placement would be labelled. No advertisement feature is running.</p></AdFeature>
+  <h2>Changes</h2>
+  <p>The date at the top of this page shows when this disclosure was last updated. Questions: <a href={`mailto:${site.email}`}>{site.email}</a>.</p>
+</Page>

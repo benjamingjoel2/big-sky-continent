@@ -1,0 +1,20 @@
+---
+import Page from '../components/Page.astro';
+import { site } from '../data/site';
+---
+<Page title="Privacy notice" description="What personal data Big Sky Continent collects, why, and your rights." path="/privacy/">
+  <p>This notice explains how Big Sky Continent, published by Tourground, handles personal data.</p>
+  <h2>What we collect</h2>
+  <ul>
+    <li><strong>Browsing.</strong> The site has no analytics, no advertising trackers, no social media embeds and no cookies. Our hosting provider, Vercel, processes standard server logs (such as IP address, browser and the page requested) to deliver the site and keep it secure.</li>
+    <li><strong>Emails you send us.</strong> If you email us, including to sign up to the newsletter, we receive your email address and whatever you write. We use it only to reply to you or to send you the newsletter you asked for.</li>
+  </ul>
+  <h2>Links to other sites</h2>
+  <p>Stories link to official sources, to the Tourground directory and to Tourground brands. Those sites have their own privacy notices.</p>
+  <h2>How long we keep it</h2>
+  <p>Newsletter addresses are kept until you unsubscribe. Other emails are kept only as long as needed to deal with your message.</p>
+  <h2>Your rights</h2>
+  <p>You can ask to see, correct or delete the personal data we hold about you, or object to how we use it, by emailing <a href={`mailto:${site.email}`}>{site.email}</a>. You can also complain to your local data protection authority.</p>
+  <h2>Who is responsible</h2>
+  <p>The site is published by Tourground (<a href={site.publisher.url}>tourground.com</a>). Contact: <a href={`mailto:${site.email}`}>{site.email}</a>.</p>
+</Page>

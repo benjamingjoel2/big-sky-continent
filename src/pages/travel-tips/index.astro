@@ -1,0 +1,9 @@
+---
+import Listing from '../../components/Listing.astro';
+import { allPosts } from '../../lib/posts';
+import { categories, tips } from '../../data/site';
+const c = categories['travel-tips'];
+const posts = (await allPosts()).filter((p) => p.data.category === 'travel-tips' || p.data.tips.length > 0);
+---
+<Listing title={c.name} description={c.blurb} path={c.path} posts={posts} eyebrow="Category"
+  crumbs={[{ name: c.name, path: c.path }]} links={Object.values(tips)} linksTitle="Health, visas and money" />

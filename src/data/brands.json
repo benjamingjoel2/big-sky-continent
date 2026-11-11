@@ -1,0 +1,23 @@
+{
+  "kenya": { "country": "Kenya", "brand": "Safari Njema", "url": "https://safarinjema.tourground.com/", "focus": "Tailor-made Kenya safaris and beach escapes" },
+  "tanzania": { "country": "Tanzania", "brand": "Uhuru Journeys", "url": "https://uhurujourneys.tourground.com/", "focus": "Tanzania safaris, Kilimanjaro and Zanzibar" },
+  "rwanda": { "country": "Rwanda", "brand": "Virunga Journeys", "url": "https://virungajourneys.tourground.com/", "focus": "Gorilla treks, Nyungwe, Akagera and Lake Kivu" },
+  "uganda": { "country": "Uganda", "brand": "Nile Source Safaris", "url": "https://nilesourcesafaris.tourground.com/", "focus": "Gorillas in Bwindi, chimps in Kibale and the Nile" },
+  "botswana": { "country": "Botswana", "brand": "Mokoro Journeys", "url": "https://mokorojourneys.tourground.com/", "focus": "Private, low-impact safaris in the Okavango and Kalahari" },
+  "south-africa": { "country": "South Africa", "brand": "Cape Compass", "url": "https://capecompass.tourground.com/", "focus": "Cape Town, the Winelands, the Garden Route and Kruger" },
+  "namibia": { "country": "Namibia", "brand": "Namib Light", "url": "https://namiblight.tourground.com/", "focus": "Sossusvlei, Etosha and the Skeleton Coast" },
+  "zambia": { "country": "Zambia", "brand": "Luangwa Safaris", "url": "https://luangwasafaris.tourground.com/", "focus": "Walking safaris in the Luangwa Valley" },
+  "zimbabwe": { "country": "Zimbabwe", "brand": "Mosi Travel", "url": "https://mositravel.tourground.com/", "focus": "Walking safaris, expert guides and Victoria Falls" },
+  "mozambique": { "country": "Mozambique", "brand": "Dhow & Dune", "url": "https://dhowanddune.tourground.com/", "focus": "Bazaruto, Ilha de Moçambique and Gorongosa" },
+  "mauritius": { "country": "Mauritius", "brand": "Kreol Coast", "url": "https://kreolcoast.tourground.com/", "focus": "Mauritius and Rodrigues beyond the resort" },
+  "seychelles": { "country": "Seychelles", "brand": "Granite Coast", "url": "https://granitecoast.tourground.com/", "focus": "Island-hopping Mahé, Praslin and La Digue" },
+  "malawi": { "country": "Malawi", "brand": "Lake of Stars Travel", "url": "https://lakeofstarstravel.tourground.com/", "focus": "Lake Malawi, Liwonde, Majete and the highlands" },
+  "madagascar": { "country": "Madagascar", "brand": "Baobab Road", "url": "https://baobabroad.tourground.com/", "focus": "Expert-led Madagascar wildlife journeys" },
+  "morocco": { "country": "Morocco", "brand": "Azul Morocco", "url": "https://azulmorocco.tourground.com/", "focus": "Marrakech, Fes, the Atlas and the Sahara" },
+  "tunisia": { "country": "Tunisia", "brand": "Carthage Journeys", "url": "https://carthagejourneys.tourground.com/", "focus": "Carthage, the medinas, Djerba and the Sahara edge" },
+  "ethiopia": { "country": "Ethiopia", "brand": "Abyssinia Journeys", "url": "https://abyssiniajourneys.tourground.com/", "focus": "Addis Ababa, Harar, the Bale Mountains and coffee country" },
+  "ghana": { "country": "Ghana", "brand": "Akwaaba", "url": "https://akwaaba.tourground.com/", "focus": "Tailor-made Ghana: court, coast, makers and savannah" },
+  "senegal": { "country": "Senegal", "brand": "Baobab & Sea", "url": "https://baobabandsea.tourground.com/", "focus": "Saint-Louis to the Saloum creeks" },
+  "the-gambia": { "country": "The Gambia", "brand": "Smiling Coast Travel", "url": "https://smilingcoasttravel.tourground.com/", "focus": "The Gambia by river, birding and music" },
+  "sao-tome-and-principe": { "country": "São Tomé and Príncipe", "brand": "Chocolate Islands Travel", "url": "https://chocolateislandstravel.tourground.com/", "focus": "Rainforest, cacao roças and Príncipe" }
+}

@@ -1,0 +1,14 @@
+---
+import Listing from '../../components/Listing.astro';
+import { allPosts } from '../../lib/posts';
+import { regions, type RegionKey } from '../../data/site';
+export function getStaticPaths() {
+  return (Object.keys(regions) as RegionKey[]).map((key) => ({ params: { region: regions[key].path.split('/')[2] }, props: { key } }));
+}
+const { key } = Astro.props as { key: RegionKey };
+const r = regions[key];
+const posts = (await allPosts()).filter((p) => p.data.regions.includes(key));
+---
+<Listing title={r.name} description={r.blurb} path={r.path} posts={posts} eyebrow="Destinations"
+  crumbs={[{ name: 'Destinations', path: '/destinations/' }, { name: r.name, path: r.path }]}
+  links={Object.entries(regions).filter(([k]) => k !== key).map(([, v]) => v)} linksTitle="Other regions" />

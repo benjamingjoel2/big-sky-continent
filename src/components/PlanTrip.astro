@@ -1,0 +1,36 @@
+---
+import brands from '../data/brands.json';
+import { site, disclosure } from '../data/site';
+interface Props { countries: string[] }
+const { countries } = Astro.props;
+type Brand = { country: string; brand: string; url: string; focus: string };
+const linked = countries.map((c) => (brands as Record<string, Brand>)[c]).filter(Boolean).slice(0, 3);
+const names = countries.map((c) => (brands as Record<string, Brand>)[c]?.country).filter(Boolean);
+const where = names.length ? names.slice(0, 3).join(', ').replace(/, ([^,]*)$/, ' or $1') : 'Africa';
+---
+<aside class="plan" aria-labelledby="plan-title">
+  <p class="eyebrow">Plan this trip</p>
+  <h2 id="plan-title">Plan it with a verified local operator</h2>
+  <p>Ready to turn this into a trip? Search the Tourground directory for verified local travel companies in {where}, compare what they offer and ask them for a quote.</p>
+  <p><a class="button" href={site.directoryUrl}>Find a verified operator on Tourground</a></p>
+  {linked.length > 0 && (
+    <>
+      <h3>Tourground brands for this trip</h3>
+      <ul class="brands">
+        {linked.map((b) => (
+          <li><a href={b.url}>{b.brand}</a> <span class="meta">({b.country}): {b.focus}</span></li>
+        ))}
+      </ul>
+    </>
+  )}
+  <p class="plan-note">{disclosure.planNote} <a href="/disclosure/">Read our disclosure</a>.</p>
+</aside>
+<style>
+  .plan { background: var(--green-soft); border-left: 6px solid var(--green); border-radius: var(--radius); padding: 1.5rem 1.25rem; margin: 2.5rem 0; max-width: 42rem; }
+  .plan h2 { font-size: 1.5rem; }
+  .plan h3 { font-size: 1.1rem; margin-top: 1.5rem; }
+  .brands { padding-left: 1.2rem; margin: 0 0 1rem; }
+  .brands li { margin-bottom: 0.4rem; }
+  .brands a { font-weight: 600; }
+  .plan-note { font-size: 0.85rem; color: var(--muted); margin: 0; }
+</style>

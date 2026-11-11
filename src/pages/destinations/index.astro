@@ -1,0 +1,9 @@
+---
+import Listing from '../../components/Listing.astro';
+import { allPosts } from '../../lib/posts';
+import { regions } from '../../data/site';
+const posts = await allPosts();
+---
+<Listing title="Destinations" description="Africa by region: East and Southern Africa’s great safari countries, North and West Africa, and the Indian Ocean islands."
+  path="/destinations/" posts={posts} crumbs={[{ name: 'Destinations', path: '/destinations/' }]}
+  links={Object.values(regions)} linksTitle="Choose a region" />
